@@ -1,6 +1,6 @@
 const Product = require('../models/Product'); 
 
-// Fetch all products
+// Fetching all products
 const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find({});
@@ -10,7 +10,7 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-// Fetch a single product by ID
+// Fetching a single product by ID
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.productId);
@@ -23,7 +23,7 @@ const getProductById = async (req, res) => {
   }
 };
 
-// Add a new product
+// Adding a new product
 const createProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body);

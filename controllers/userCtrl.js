@@ -1,12 +1,12 @@
 // controllers/userCtrl.js
 const User = require('../models/User');
 
-// 1. Register a new user
+// 1. Registering a new user
 const registerUser = async (req, res) => {
     try {
         const { name, email, password, phone } = req.body;
         
-        // Check if a user with this email already exists
+        // Checking if a user with this email already exists
         const userExists = await User.findOne({ email });
         if (userExists) {
             return res.status(400).json({ message: "User already exists with this email" });
@@ -24,7 +24,7 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         
-        // Find user by email
+        // Finding user by email
         const user = await User.findOne({ email });
 
         // Validate password
@@ -38,7 +38,7 @@ const loginUser = async (req, res) => {
     }
 };
 
-// 3. Get user profile by ID
+// 3. Getting user profile by ID
 const getUserProfile = async (req, res) => {
     try {
         const user = await User.findById(req.params.userId);
