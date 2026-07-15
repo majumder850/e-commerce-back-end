@@ -7,7 +7,7 @@ const { initializeDatabase } = require('./db/db.js');
 const app = express();
 app.use(express.json());
 
-// 1. Initialize Database FIRST
+// 1. Initialize Database 
 initializeDatabase();
 
 const corsOptions = {
