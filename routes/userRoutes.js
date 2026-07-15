@@ -3,6 +3,11 @@ const express = require('express');
 const router = express.Router();
 const { registerUser, loginUser, getUserProfile } = require('../controllers/userCtrl');
 
+// GET /api/users
+router.get('/', (req, res) => {
+  res.status(200).json({ message: "User API is running!" });
+});
+
 // POST /api/users/register
 router.post('/register', registerUser);
 
